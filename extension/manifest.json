@@ -1,0 +1,24 @@
+{
+  "name": "Garmmarly",
+  "description": "Hear at Garmmarly, we're making riting write.",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "/images/garmmarly_badge_16.png",
+      "32": "/images/garmmarly_badge_32.png",
+      "48": "/images/garmmarly_badge_48.png",
+      "128": "/images/garmmarly_badge_128.png"
+    }
+  },
+  "icons": {
+    "16": "/images/garmmarly_badge_16.png",
+    "32": "/images/garmmarly_badge_32.png",
+    "48": "/images/garmmarly_badge_48.png",
+    "128": "/images/garmmarly_badge_128.png"
+  }
+}
