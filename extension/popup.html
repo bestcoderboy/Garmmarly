@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="button.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div>
-        <h1>Garmmarly</h1>
+        <img src="images/garmmarly_logo_white_transparent.png" width="176" height="50" style="display: block; margin-left: auto; margin-right: auto;">
     </div>
+    <button id="changeColor"></button>
+    <div id="premium">
+        <h1>Sorry!</h1>
+        <h2>This is only available with Garmmarly Preemeum.</h2>
+        <h3><a href="#">Back</a></h3>
+    </div>
+    <div id="options" hidden>
     <h3>Switch Vowels</h3>
     <label class="switch">
         <input type="checkbox" checked>
@@ -29,7 +36,7 @@
     </label>
     <h3>Capitalisation</h3>
     <label class="switch">
-        <input type="checkbox">
+        <input type="checkbox" checked>
         <span class="slider round"></span>
     </label>
     <h3>Double Words</h3>
@@ -37,18 +44,17 @@
         <input type="checkbox">
         <span class="slider round"></span>
     </label>
-    <h3>Double Words</h3>
+    <h3>Dragged Letters</h3>
     <label class="switch">
         <input type="checkbox">
         <span class="slider round"></span>
-    </label>
-    <div>
-        <h2>Premium <a href="#">[UNLOCK]</a></h2>
+    </label><br><br>
     </div>
-    <h3>Double Words</h3>
-    <label class="switch">
-        <input type="checkbox">
-        <span class="deadSlider round"></span>
-    </label>
+<!--    <h2>Preemeum</h2>-->
+<!--    <h3>Double Words</h3>-->
+<!--    <label class="switch" id="premium1">-->
+<!--        <input type="checkbox">-->
+<!--        <span class="slider round"></span>-->
+<!--    </label><br><br>-->
 </body>
 </html>
