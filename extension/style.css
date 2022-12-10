@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap');
 body {background: rgb(45, 45, 45);width: 200px;height: 500px;}
-h1, h2, h3, p {color: #ffffff;font-family: 'Lato', sans-serif;}
+h1, h2, h3, p, button {color: #ffffff;font-family: 'Lato', sans-serif;}
 a {color: white;}
 /* Switch CSS */
 .switch {position: relative;display: inline-block;width: 50px;height: 25px;}
@@ -20,3 +20,4 @@ input:checked + .deadSlider {background-color: #bb7272;}
 input:focus + .deadSlider {box-shadow: 0 0 1px #bb7272;}
 .deadSlider.round {border-radius: 34px;}
 .deadSlider.round:before {border-radius: 50%;}
+#premiumClick { background-color: rgb(45, 45, 45); color: white; border: white; border-radius: 8px; font-size: 15px; }

@@ -3,9 +3,6 @@
   "description": "Hear at Garmmarly, we're making riting write.",
   "version": "0.0.1",
   "manifest_version": 3,
-  "background": {
-    "service_worker": "background.js"
-  },
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
@@ -20,5 +17,9 @@
     "32": "/images/garmmarly_badge_32.png",
     "48": "/images/garmmarly_badge_48.png",
     "128": "/images/garmmarly_badge_128.png"
-  }
+  },
+  "content_scripts": [{
+    "js": ["content.js"],
+    "matches": ["<all_urls>"]
+  }]
 }

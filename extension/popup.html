@@ -1,60 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <link rel="stylesheet" href="style.css">
+    <script src="popup.js"></script>
+    <title>Garmmarly Modal</title>
 </head>
 <body>
     <div>
-        <img src="images/garmmarly_logo_white_transparent.png" width="176" height="50" style="display: block; margin-left: auto; margin-right: auto;">
+        <!--suppress CheckImageSize -->
+        <img alt="Garmmarly Logo" src="images/garmmarly_logo_white_transparent.png" width="176" height="50" style="display: block; margin-left: auto; margin-right: auto;">
     </div>
-    <button id="changeColor"></button>
-    <div id="premium">
-        <h1>Sorry!</h1>
-        <h2>This is only available with Garmmarly Preemeum.</h2>
-        <h3><a href="#">Back</a></h3>
+    <div id="options">
+        <h3>Switch Vowels</h3>
+        <label class="switch">
+            <input type="checkbox" id="vowelSwitch" checked>
+            <span class="slider round"></span>
+        </label>
+        <h3>Random Letters</h3>
+        <label class="switch">
+            <input type="checkbox" id="letterSwitch" checked>
+            <span class="slider round"></span>
+        </label>
+        <h3>Swapped Letters</h3>
+        <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider round"></span>
+        </label>
+        <h3>Punctuation Move</h3>
+        <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider round"></span>
+        </label>
+        <h3>Capitalisation</h3>
+        <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider round"></span>
+        </label>
+        <h3>Double Words</h3>
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+        </label>
+        <h2><a href="#" id="premiumClick">More Options</a></h2><br>
     </div>
-    <div id="options" hidden>
-    <h3>Switch Vowels</h3>
-    <label class="switch">
-        <input type="checkbox" checked>
-        <span class="slider round"></span>
-    </label>
-    <h3>Random Letters</h3>
-    <label class="switch">
-        <input type="checkbox" checked>
-        <span class="slider round"></span>
-    </label>
-    <h3>Swapped Letters</h3>
-    <label class="switch">
-        <input type="checkbox" checked>
-        <span class="slider round"></span>
-    </label>
-    <h3>Punctuation Move</h3>
-    <label class="switch">
-        <input type="checkbox" checked>
-        <span class="slider round"></span>
-    </label>
-    <h3>Capitalisation</h3>
-    <label class="switch">
-        <input type="checkbox" checked>
-        <span class="slider round"></span>
-    </label>
-    <h3>Double Words</h3>
-    <label class="switch">
-        <input type="checkbox">
-        <span class="slider round"></span>
-    </label>
-    <h3>Dragged Letters</h3>
-    <label class="switch">
-        <input type="checkbox">
-        <span class="slider round"></span>
-    </label><br><br>
+    <div id="premiumPopup" hidden>
+        <h1>Want more options?</h1>
+        <h2>More crazy settings are available only with Garmmarly Preemeum, the free subscription!</h2>
+        <h2 style="color:green"><a href="#" id="premiumJoin">I want to join!</a></h2>
+        <h3><a href="#" id="premiumBack">I don't want more cool options.</a></h3><br>
     </div>
-<!--    <h2>Preemeum</h2>-->
-<!--    <h3>Double Words</h3>-->
-<!--    <label class="switch" id="premium1">-->
-<!--        <input type="checkbox">-->
-<!--        <span class="slider round"></span>-->
-<!--    </label><br><br>-->
 </body>
 </html>
