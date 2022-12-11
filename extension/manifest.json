@@ -21,5 +21,9 @@
   "content_scripts": [{
     "js": ["content.js"],
     "matches": ["<all_urls>"]
-  }]
+  }],
+  "permissions": [
+    "tabs",
+    "storage"
+  ]
 }

@@ -1,3 +1,5 @@
+// noinspection JSUnresolvedVariable,DuplicatedCode
+
 // Copyright 2022 BestCoderBoy
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +15,11 @@
 // limitations under the License.
 
 // ------------------------------------------------------
+// Initialising
+// ------------------------------------------------------
+let settings = {}
+
+// ------------------------------------------------------
 // Function to remove punctuation from text using RegExp.
 // ------------------------------------------------------
 function removePunctuation(text) {
@@ -23,10 +30,10 @@ function removePunctuation(text) {
 // ------------------------------------------------------
 // Function to randomly capitalise text.
 // ------------------------------------------------------
-function randomCapitalisation(text, strength) {
+function randomCapitalisation(text) {
     let array = text.split(""), x
     for (x = 0; x < array.length; x++) {
-        let y = Math.floor(Math.random() * strength)
+        let y = Math.floor(Math.random() * 2)
         if (y === 0) { array[x] = array[x].toLowerCase() }
         else { array[x] = array[x].toUpperCase() }
         text = array.join("")
@@ -37,24 +44,45 @@ function randomCapitalisation(text, strength) {
 // ------------------------------------------------------
 // Function to run all Garmmarly functions.
 // ------------------------------------------------------
-function garmmarlyRun(text) {
-    let strength = 2
-    text = removePunctuation(text)
-    text = randomCapitalisation(text, strength)
+function garmmarlyRun(text, settings) {
+    if (settings.punctuation) { text = removePunctuation(text) }
+    if (settings.capitalisation) { text = randomCapitalisation(text) }
     return text
 }
 
 // ------------------------------------------------------
 // This code finds all text on a page and Garmmarlises it.
 // ------------------------------------------------------
-const deepNonEmptyTextNodes = el => [...el.childNodes].flatMap(e =>
-    e.nodeType === Node.TEXT_NODE && e.textContent.trim() ?
-        e : deepNonEmptyTextNodes(e)
-);
 
 let textTags = [...document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li, td, caption, span, a, strong, i, em, textarea, input')];
 
-textTags.forEach(tagNode => {
-    const textNodes = deepNonEmptyTextNodes(tagNode);
-    textNodes.forEach(node => node.nodeValue = garmmarlyRun(node.nodeValue))
-})
+chrome.storage.local.get(["capitalisation", "punctuation"]).then((result) => {
+    Object.assign(settings, result)
+    const deepNonEmptyTextNodes = el => [...el.childNodes].flatMap(e =>
+        e.nodeType === Node.TEXT_NODE && e.textContent.trim() ?
+            e : deepNonEmptyTextNodes(e)
+    );
+    textTags.forEach(tagNode => {
+        const textNodes = deepNonEmptyTextNodes(tagNode);
+        textNodes.forEach(node => node.nodeValue = garmmarlyRun(node.nodeValue, settings))
+    })
+});
+
+// ------------------------------------------------------
+// This code checks for option changes and re-runs the code.
+// ------------------------------------------------------
+
+// noinspection JSUnusedLocalSymbols
+chrome.storage.onChanged.addListener((changes, namespace) => {
+    chrome.storage.local.get(["capitalisation", "punctuation"]).then((result) => {
+        Object.assign(settings, result)
+        const deepNonEmptyTextNodes = el => [...el.childNodes].flatMap(e =>
+            e.nodeType === Node.TEXT_NODE && e.textContent.trim() ?
+                e : deepNonEmptyTextNodes(e)
+        );
+        textTags.forEach(tagNode => {
+            const textNodes = deepNonEmptyTextNodes(tagNode);
+            textNodes.forEach(node => node.nodeValue = garmmarlyRun(node.nodeValue, settings))
+        })
+    });
+});
