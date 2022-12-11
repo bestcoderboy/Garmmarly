@@ -1,6 +1,5 @@
 function removePunctuation(text) {
-    // noinspection RegExpRedundantEscape
-    text = text.replace(/[\.,-\/#!£$%\^&\*;:{}=\-_`~()@\+\?><\[\]]/g, ' ').replace(/  +/g, ' ')
+    text = text.replace(/[\.,-\/#!£$%\^&\*;:{}=\-_`~()@\+\?><\[\]\+]/g, ' ').replace(/  +/g, ' ')
     return text
 }
 function setCharAt(str,index,chr) {

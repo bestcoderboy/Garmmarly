@@ -1,7 +1,7 @@
 {
   "name": "Garmmarly",
   "description": "Hear at Garmmarly, we're making riting write.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "manifest_version": 3,
   "action": {
     "default_popup": "popup.html",
