@@ -1,3 +1,2 @@
-# Garmmarly
-_Here at Garmmarly, we're making riting write._
-#### All code by BestCoderBoy. Name inspired by a certain company...
+# Garmmarly - _Making yuor riting write_
+A Chrome extension for all the times that you need a grammatical change in your life.
